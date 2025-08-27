@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYOS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/css/index.css">
+    <script src="assets/js/index.js"></script>
+</head>
+<body style="background-color: lightblue;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4">
+                <h1 class="text-center header-text" id="header-text"><i>Songs</i></h1>
+            </div>
+
+            <div class="card main-card" id="song-list">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <img src="assets/img/garden_pig_image.jpg" class="card-img-top song-list-img" alt="...">
+                                <div class="card-body text-center">
+                                    <h5 class="card-text">Garden Pig</h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Play</button>
+                                        <button class="btn btn-secondary" onclick="previewSong()">Preview</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <img src="assets/img/brown_bear_image.jpg" class="card-img-top song-list-img" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-text">Brown Bear</h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Play</button>
+                                        <button class="btn btn-secondary">Preview</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <img src="assets/img/hands_and_fingers_image.jpg" class="card-img-top song-list-img" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-text">Hands and Fingers</h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Play</button>
+                                        <button class="btn btn-secondary">Preview</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <img src="assets/img/lunch_song_image.jpg" class="card-img-top song-list-img" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-text">Lunch Song</h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Play</button>
+                                        <button class="btn btn-secondary">Preview</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <img src="assets/img/pink_pig_image.jpg" class="card-img-top song-list-img" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-text">Pink Pig</h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Play</button>
+                                        <button class="btn btn-secondary">Preview</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <img src="assets/img/wake_up_time_image.jpg" class="card-img-top song-list-img" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-text">Wake Up Time</h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Play</button>
+                                        <button class="btn btn-secondary">Preview</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <img src="assets/img/fast_image.jpg" class="card-img-top song-list-img" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-text">Let's Go Fast</h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Play</button>
+                                        <button class="btn btn-secondary">Preview</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <img src="assets/img/cat_and_dog_image.jpg" class="card-img-top song-list-img" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-text">Cat and Dog</h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Play</button>
+                                        <button class="btn btn-secondary">Preview</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card main-card" id="preview" style="display: none;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="card">
+                                <img src="assets/img/garden_pig_image.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Play</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-10">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Preview Song</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Lyrics</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Vocabulary</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="myos-tab" data-bs-toggle="tab" data-bs-target="#myos-tab-pane" type="button" role="tab" aria-controls="myos-tab-pane" aria-selected="false">Make Your Own Song</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                    <video controls style="width: 60%;">
+                                        <source src="assets/vid/Garden Pig - vid preview.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                    <img src="assets/img/lyrics.jpg" alt="Garden Pig Lyrics">
+                                </div>
+                                <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                    <img src="assets/img/vocabulary.jpg" alt="Garden Pig Vocabulary" style="width: 100%;">
+                                </div>
+                                <div class="tab-pane fade" id="myos-tab-pane" role="tabpanel" aria-labelledby="myos-tab" tabindex="0">
+                                    <div class="row">
+                                        <div class="col-9 text-end">
+                                            <h2>Here's my friend, the <span class="custom-word" onclick="showWords(1)" id="custom-word-1">[choose word]</span></h2>
+                                        </div>
+                                        <div class="col-3 text-start">
+                                            <img src="" class="custom-img" alt="..." style="display: none; width: 80px;" id="custom-img-1">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-9 text-end">
+                                            <h2>He likes to play in the <span class="custom-word" onclick="showWords(2)" id="custom-word-2">[choose word]</span></h2>
+                                        </div>
+                                        <div class="col-3 text-start">
+                                            <img src="" class="custom-img" alt="..." style="display: none; width: 80px;" id="custom-img-2">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-9 text-end">
+                                            <h2>He sees a little <span class="custom-word" onclick="showWords(3)" id="custom-word-3">[choose word]</span></h2>
+                                        </div>
+                                        <div class="col-3 text-start">
+                                            <img src="" class="custom-img" alt="..." style="display: none; width: 80px;" id="custom-img-3">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-9 text-end">
+                                            <h2>And smells a beautiful <span class="custom-word" onclick="showWords(4)" id="custom-word-4">[choose word]</span></h2>
+                                        </div>
+                                        <div class="col-3 text-start">
+                                            <img src="" class="custom-img" alt="..." style="display: none; width: 80px;" id="custom-img-4">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-9 text-end">
+                                            <h2>He walks next to a big <span class="custom-word" onclick="showWords(5)" id="custom-word-5">[choose word]</span></h2>
+                                        </div>
+                                        <div class="col-3 text-start">
+                                            <img src="" class="custom-img" alt="..." style="display: none; width: 80px;" id="custom-img-5">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-9 text-end">
+                                            <h2>And lies in the green <span class="custom-word" onclick="showWords(6)" id="custom-word-6">[choose word]</span></h2>
+                                        </div>
+                                        <div class="col-3 text-start">
+                                            <img src="" class="custom-img" alt="..." style="display: none; width: 80px;" id="custom-img-6">
+                                        </div>
+                                    </div>
+
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block" id="custom-play-button" style="display: none;" onclick="playSong()">Play Song</button>
+
+                                         <button class="btn btn-primary btn-block" disabled id="custom-play-button-disabled">Choose all words to play song</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card main-card" id="new-words-1" style="display: none;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card word-card" onclick="selectWord('1','Dog')">
+                                <img src="assets/img/dogWord.png" class="card-img-top song-list-img" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Dog</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card word-card" onclick="selectWord('1','Cat')">
+                                <img src="assets/img/CatWord.png" class="card-img-top song-list-img" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Cat</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card word-card" onclick="selectWord('1','Horse')">
+                                <img src="assets/img/HorseWord.png" class="card-img-top song-list-img" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Horse</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card main-card" id="new-words-2" style="display: none;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('2','Backyard')">
+                                <img src="assets/img/BackyardWord.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Backyard</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('2','Playground')">
+                                <img src="assets/img/PlaygroundWord.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Playground</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('2','Big Park')">
+                                <img src="assets/img/Big_ParkWord.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Big Park</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card main-card" id="new-words-3" style="display: none;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('3','Bee')">
+                                <img src="assets/img/BeeWord.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Bee</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('3','Ant')">
+                                <img src="assets/img/AntWord.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Ant</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('3','Snail')">
+                                <img src="assets/img/SnailWord.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Snail</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card main-card" id="new-words-4" style="display: none;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('4','Rose Bush')">
+                                <img src="assets/img/pink_pig_image.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Rose Bush</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('4','Tulip')">
+                                <img src="assets/img/pink_pig_image.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Tulip</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('4','Daisy')">
+                                <img src="assets/img/pink_pig_image.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Daisy</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card main-card" id="new-words-5" style="display: none;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('5','Fence')">
+                                <img src="assets/img/pink_pig_image.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Fence</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('5','Rock')">
+                                <img src="assets/img/pink_pig_image.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Rock</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('5','Log')">
+                                <img src="assets/img/pink_pig_image.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Log</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card main-card" id="new-words-6" style="display: none;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('6','Brown Dirt')">
+                                <img src="assets/img/pink_pig_image.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Brown Dirt</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('6','White Sand')">
+                                <img src="assets/img/pink_pig_image.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">White Sand</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card" onclick="selectWord('6','Yellow Hay')">
+                                <img src="assets/img/pink_pig_image.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-text text-center">Yellow Hay</h4>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-block">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="card main-card" id="custom-video-card" style="display: none;">
+                <div class="card-body">
+                    <div class="row">
+                        <div id="custom-video-div">
+                            <video controls preload="none" autoplay id="custom-video-src" src="">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

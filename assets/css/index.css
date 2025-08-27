@@ -1,0 +1,31 @@
+.custom-word {
+    color: purple;
+    cursor: pointer;
+}
+
+.word-card {
+    cursor: pointer;
+}
+
+.header-text {
+    margin: 20px 10px; 
+    padding: 10px; 
+    background: gold; 
+    border: solid 2px darkorange; 
+    border-radius: 30px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.song-list-img {
+    border-radius: 60%;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.main-card {
+    border: orange 3px solid; 
+    border-radius: 10px
+}
