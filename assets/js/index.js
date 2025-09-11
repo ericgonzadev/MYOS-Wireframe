@@ -106,7 +106,9 @@ function playSong() {
                 <div class="card-body text-center">
                     <h5 class="card-text">` + sessionStorage.getItem('songName') + `</h5>
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary btn-block" onclick="playCustomSong('` + sessionStorage.getItem(1) + "', '" +
+                        <button class="btn btn-primary btn-block" onclick="playCustomSong('` + 
+                        sessionStorage.getItem('songName') + "', '" +
+                        sessionStorage.getItem(1) + "', '" +
                         sessionStorage.getItem(2) + "', '" +
                         sessionStorage.getItem(3) + "', '" +
                         sessionStorage.getItem(4) + "', '" +
@@ -170,8 +172,12 @@ function stopSong() {
     showSongList();
 }
 
-function playCustomSong(word1, word2, word3, word4, word5, word6) {
+function playCustomSong(songName, word1, word2, word3, word4, word5, word6) {
     hideMainCards();
+
+    // Update header text
+    var headerText = document.getElementById('header-text');
+    headerText.innerHTML = "<i>" + songName + "</i>";
 
     preloadVideo(1, word1);
     preloadVideo(2, word2);
