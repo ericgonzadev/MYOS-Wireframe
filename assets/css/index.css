@@ -1,5 +1,5 @@
 .custom-word {
-    color: purple;
+    color: rgb(17, 202, 235);
     cursor: pointer;
 }
 
@@ -28,4 +28,15 @@
 .main-card {
     border: orange 3px solid; 
     border-radius: 10px
+}
+
+.btn-secondary,
+.btn-secondary:hover {
+    background-color: white;
+    color: rgb(3, 197, 197);
+    border: none;
+}
+
+.custom-video-src {
+    margin: auto;
 }
