@@ -1,12 +1,17 @@
 // Default values
 sessionStorage.setItem('songName', 'Garden Pig');
 
+// Array to hold active timeout IDs
+let timeouts = [];
+
 // This function hides all main cards
 // Usually called when switching between different views
 function hideMainCards() {
     document.querySelectorAll('.main-card').forEach(function(el){
         el.style.display = 'none';
     });
+
+    document.getElementById('custom-song-warning').style.display = 'none';
 }
 
 function showSongList() {
@@ -17,6 +22,8 @@ function showSongList() {
     headerText.innerHTML = "<i>Songs</i>";
 
     document.getElementById('song-list').style.display = 'block';
+
+    document.getElementById('custom-song-warning').style.display = 'block';
 }
 
 // Shows the preview screen
@@ -148,7 +155,7 @@ function playSong() {
 }
 
 function loadVideo(index, timeOffset) {
-    setTimeout(() => {
+    const id = setTimeout(() => {
         document.querySelectorAll('.custom-video-src').forEach(function(el){
             el.style.display = 'none';
         });
@@ -156,18 +163,52 @@ function loadVideo(index, timeOffset) {
         video.style.display = 'block';
         video.play();
     }, timeOffset);
+
+    timeouts.push(id);
 }
 
 function stopSong() {
     hideMainCards();
 
-    document.querySelectorAll('.custom-video-src').forEach(function(el){
-        el.style.display = 'none';
-    });
-
     const audio = document.getElementById('background-audio');
     audio.pause();
     audio.currentTime = 0;
+
+    var video = document.getElementById('custom-video-src1');
+    video.pause();
+    video.currentTime = 0;
+
+    video = document.getElementById('custom-video-src2');
+    video.pause();
+    video.currentTime = 0;
+
+    video = document.getElementById('custom-video-src3');
+    video.pause();
+    video.currentTime = 0;
+
+    video = document.getElementById('custom-video-src4');
+    video.pause();
+    video.currentTime = 0;
+
+    video = document.getElementById('custom-video-src5');
+    video.pause();
+    video.currentTime = 0;
+
+    video = document.getElementById('custom-video-src6');
+    video.pause();
+    video.currentTime = 0;
+
+    video = document.getElementById('static-video-src');
+    video.pause();
+    video.currentTime = 0;
+
+    while (timeouts.length) {
+        clearTimeout(timeouts.pop());
+    }
+
+    document.querySelectorAll('.custom-video-src').forEach(function(el){
+        el.style.display = 'none';
+    });
 
     showSongList();
 }
@@ -196,8 +237,22 @@ function playCustomSong(songName, word1, word2, word3, word4, word5, word6) {
     // Load videos with offest times
     loadVideo(1, 1000);
     loadVideo(2, 4000);
-    loadVideo(3, 7400);
-    loadVideo(4, 11400);
+    loadVideo(3, 7600);
+    loadVideo(4, 11200);
     loadVideo(5, 14800);
-    loadVideo(6, 18300);
+    loadVideo(6, 18600);
+}
+
+function playStaticSong(song) {
+    hideMainCards();
+
+    document.getElementById('static-video-card').style.display = 'block';
+
+    // Update header text
+    var headerText = document.getElementById('header-text');
+    headerText.innerHTML = "<i>" + song + "</i>";
+
+    var video = document.getElementById('static-video-src');
+    video.src = 'assets/video/' + song + ' Preview.mp4';  // Directly change the src attribute of the video element
+    video.load();        // Reload the video element with the new source
 }

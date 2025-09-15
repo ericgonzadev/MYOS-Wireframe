@@ -16,6 +16,7 @@
             <div class="col-lg-4 offset-lg-4">
                 <h1 class="text-center header-text" id="header-text"><i>Songs</i></h1>
             </div>
+            <p class="text-center text-danger" id="custom-song-warning"><b>NOTE: Custom songs will be lost if web browser is closed or refreshed</b></p>
 
             <div class="card main-card" id="song-list">
                 <div class="card-body">
@@ -24,9 +25,9 @@
                             <div class="card">
                                 <img src="assets/img/garden_pig_image.jpg" class="card-img-top song-list-img" alt="...">
                                 <div class="card-body text-center">
-                                    <h5 class="card-text">Garden Pig</h5>
+                                    <h5 class="card-text">Garden Pig <span class="text-info">(MYOS READY)</span></h5>
                                     <div class="d-grid gap-2">
-                                        <button class="btn btn-primary btn-block">Play ▶︎</button>
+                                        <button class="btn btn-primary btn-block" onclick="playStaticSong('Garden Pig')">Play ▶︎</button>
                                         <button class="btn btn-secondary" onclick="previewSong()">Preview</button>
                                     </div>
                                 </div>
@@ -37,10 +38,10 @@
                             <div class="card">
                                 <img src="assets/img/meal_song_image.jpg" class="card-img-top song-list-img" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-text">Meal Song</h5>
+                                    <h5 class="card-text">Meal Song <span class="text-info">(NO MYOS)</span></h5>
                                     <div class="d-grid gap-2">
-                                        <button class="btn btn-primary btn-block">Play ▶︎</button>
-                                        <button class="btn btn-secondary">Preview</button>
+                                        <button class="btn btn-primary btn-block" onclick="playStaticSong('Meal Song')">Play ▶︎</button>
+                                        <!-- <button class="btn btn-secondary">Preview</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -50,10 +51,10 @@
                             <div class="card">
                                 <img src="assets/img/pink_pig_image.jpg" class="card-img-top song-list-img" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-text">Pink Pig</h5>
+                                    <h5 class="card-text">Pink Pig <span class="text-info">(NO MYOS)</span></h5>
                                     <div class="d-grid gap-2">
-                                        <button class="btn btn-primary btn-block">Play ▶︎</button>
-                                        <button class="btn btn-secondary">Preview</button>
+                                        <button class="btn btn-primary btn-block" onclick="playStaticSong('Pink Pig')">Play ▶︎</button>
+                                        <!-- <button class="btn btn-secondary">Preview</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +71,7 @@
                                 <img src="assets/img/garden_pig_image.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <div class="d-grid gap-2">
-                                        <button class="btn btn-primary btn-block">Play ▶︎</button>
+                                        <button class="btn btn-primary btn-block" onclick="playStaticSong('Garden Pig')">Play ▶︎</button>
                                     </div>
                                 </div>
                             </div>
@@ -501,26 +502,42 @@
              <div class="card main-card" id="custom-video-card" style="display: none;">
                 <div class="card-body">
                     <div class="row">
-                        <div id="custom-video-div">
-
-                            <video autoplay class="custom-video-src" id="custom-video-src1" src="" style="display: none;">
+                        <div class="col-12">
+                            <video autoplay class="custom-video-src" id="custom-video-src1" src="" style="display: none; width: 80%;">
                             </video>
-                            <video autoplay class="custom-video-src" id="custom-video-src2" src="" style="display: none;">
+                            <video autoplay class="custom-video-src" id="custom-video-src2" src="" style="display: none; width: 80%;">
                             </video>
-                            <video autoplay class="custom-video-src" id="custom-video-src3" src="" style="display: none;">
+                            <video autoplay class="custom-video-src" id="custom-video-src3" src="" style="display: none; width: 80%;">
                             </video>
-                            <video autoplay class="custom-video-src" id="custom-video-src4" src="" style="display: none;">
+                            <video autoplay class="custom-video-src" id="custom-video-src4" src="" style="display: none; width: 80%;">
                             </video>
-                            <video autoplay class="custom-video-src" id="custom-video-src5" src="" style="display: none;">
+                            <video autoplay class="custom-video-src" id="custom-video-src5" src="" style="display: none; width: 80%;">
                             </video>
-                            <video autoplay class="custom-video-src" id="custom-video-src6" src="" style="display: none;">
+                            <video autoplay class="custom-video-src" id="custom-video-src6" src="" style="display: none; width: 80%;">
                             </video>
                         </div>
 
                         <div class="col-lg-6 offset-lg-3">
                              <div class="d-grid gap-2">
-                                 <button class="btn btn-danger btn-lg mt-2 mb-4" id="custom-stop-button" onclick="stopSong()">Exit</button>
+                                 <button class="btn btn-warning btn-lg mt-2 mb-4" id="custom-stop-button" onclick="stopSong()">Exit Song</button>
                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card main-card" id="static-video-card" style="display: none;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <video style="width: 80%;" autoplay class="static-video-src" id="static-video-src">
+                        </video>
+
+                        <div class="col-lg-6 offset-lg-3">
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-warning btn-lg mt-2 mb-4" id="static-stop-button" onclick="stopSong()">Exit Song</button>
+                            </div>
                         </div>
                     </div>
                 </div>
