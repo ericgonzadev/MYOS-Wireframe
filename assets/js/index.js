@@ -73,6 +73,14 @@ function selectWord(index, word) {
     previewImage.src = 'assets/img/' + word.replace(/ /g, '_') + 'Word.png';
     previewImage.style.display = 'block';
 
+    // Validate custom song
+    validateCustomSong(); 
+
+    // Shows the preview screen again
+    previewSong();
+}
+
+function validateCustomSong() {
     // Show 'Play' button if all word have been selected
     var chosenWords = 0;
     document.querySelectorAll('.custom-word').forEach(function(el){
@@ -84,14 +92,11 @@ function selectWord(index, word) {
     console.log("Number of chosen words: " + chosenWords);
 
     var songName = document.getElementById('custom-song-name').value;
-    if (chosenWords === 6 && songName) {
+    if (chosenWords === 6 && songName.length > 0) {
         document.getElementById('custom-play-button').style.display = 'block';
         document.getElementById('custom-play-button-disabled').style.display = 'none';
         sessionStorage.setItem('songName', songName);
     }
-
-    // Shows the preview screen again
-    previewSong();
 }
 
 function preloadVideo(index, word) {
